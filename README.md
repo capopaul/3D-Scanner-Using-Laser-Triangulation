@@ -62,30 +62,5 @@ pip install --no-cache-dir --upgrade -r requirements.txt
 
 
 # Code Architecture
-📦3D-Laser-Triangulation-Scanner
- ┣ 📂arduino_stepper                        Arduino Code to control the 3D Scanner motor
- ┃ ┗ 📜arduino_stepper.ino
- ┣ 📂SAVES                                  Default Configuration DO NOT EDIT
- ┃ ┣ 📂images
- ┃ ┣ 📜config.txt                           
- ┃ ┣ 📜default_calibrations.txt            
- ┃ ┣ 📜imageFond.jpg                        
- ┃ ┣ 📜informations.txt                     
- ┃ ┗ 📜precedente_calibrations.txt          
- ┣ 📂ScanTest                               This folder contains many different scan files we did. You can use them as example for the
-                                            visualisation part 
- ┣ 📜.gitignore
- ┣ 📜BlenderScript.py                       Script use to visualize data in Blender
- ┣ 📜Fenetre.py
- ┣ 📜FenetreScan.py
- ┣ 📜FonctionsAnnexes.py
- ┣ 📜fonctionsFichier.py
- ┣ 📜fonctionsFichierProvisoire.py          Control a cache file use to communicate with blender
- ┣ 📜FonctionVisualiser.py
- ┣ 📜LICENSE
- ┣ 📜Main.py                                Script of the Software. You need to run it !
- ┣ 📜OuvrirInformationsCalibrations.py
- ┣ 📜README.md
- ┣ 📜requirements.txt
- ┣ 📜Scan.py                                File use to launch a scan. Without 3D scanner what you will find here is useless
- ┗ 📜VariableGlobal.py
+
+![alt text](SAVES/images/structure.png)
