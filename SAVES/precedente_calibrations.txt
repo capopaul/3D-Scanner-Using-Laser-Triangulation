@@ -1,0 +1,8 @@
+Hmoins: 17
+Hplus: 229
+Smoins: 0
+Splus: 194
+Vmoins: 111
+Vplus: 255
+Luminosite: 28
+Contraste: 50

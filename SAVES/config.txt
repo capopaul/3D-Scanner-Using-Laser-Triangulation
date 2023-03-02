@@ -1,0 +1,4 @@
+version: 1.0
+camera: 0
+usb: COM4
+blender: C:/Program Files (x86)/Blender Foundation/Blender/blender.exe

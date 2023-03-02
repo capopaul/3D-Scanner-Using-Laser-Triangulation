@@ -1,0 +1,7 @@
+nom: MonScan
+date: 25/02/2018
+precision: 10
+distance: 35
+angle: 33
+nbTours: 1
+H: 0.0
