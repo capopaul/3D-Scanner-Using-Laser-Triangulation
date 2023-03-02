@@ -1,5 +1,4 @@
 import os
-
 """
 Mais à quoi sert ce truc c'est ça ?
 
@@ -19,7 +18,7 @@ variables non actualisé
 
 #pour éditer le fichier temporaire
 def edit(link):
-    fichier = open("FichierTemporaire.txt", "w")
+    fichier = open(file="FichierTemporaire.txt", mode="w", encoding="utf-8")
     fichier.write(link)
     fichier.close()
 
@@ -31,7 +30,7 @@ def delete():
 class link():
     def __init__(self):
         try:
-            fichier = open("FichierTemporaire.txt", "r")
+            fichier = open("FichierTemporaire.txt", "r", encoding="utf-8")
             lien= fichier.readline()
             fichier.close()
             self.lien = lien

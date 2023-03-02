@@ -17,6 +17,7 @@ import imp
 imp.reload(fichierProvisoire)
 imp.reload(fichier)
 
+
 def createMesh(name, origin, verts, edges, faces):
     # Create mesh and object
     me = bpy.data.meshes.new(name+'Mesh')
@@ -24,7 +25,7 @@ def createMesh(name, origin, verts, edges, faces):
     ob.location = origin
     ob.show_name = True
     # Link object to scene
-    bpy.context.scene.objects.link(ob)
+    bpy.context.scene.collection.objects.link(ob)
  
     # Create mesh from given verts, edges, faces. Either edges or
     # faces should be [], or you ask for problems
@@ -34,15 +35,15 @@ def createMesh(name, origin, verts, edges, faces):
     me.update(calc_edges=True)
     return ob
  
-def run(origin,verts,nom):
-    (x,y,z) = (0.707107, 0.258819, 0.965926)
-
-
-    ob2 = createMesh(nom.replace("\n",""), origin, verts, [] , [])
  
-    # Move second object out of the way
-
+def run(origin,verts,nom):
+    
+    (x,y,z) = (0.707107, 0.258819, 0.965926)
+    ob2 = createMesh(nom.replace("\n",""), origin, verts, [] , [])
+    
     return
+
+
 def decrypt(path):
     file = open(path,"r")
     nom = fichier.getNom(file)
@@ -60,46 +61,40 @@ def decrypt(path):
         if line == ListHeight[0]:
             coordPx = np.array([line.split(":")] )
             b = n
-            n = np.size(coordPx)
-            
-            
+            n = np.size(coordPx)   
         else:
             try:
                 coordPx = np.append(coordPx,  [line.split(":")] , axis=0 )
                 b = n
-                n = np.size(coordPx)
-                
+                n = np.size(coordPx) 
             except ValueError:
                 pass
+            
     return title,coordPx,angle,distance,nom
-def vertGenerator(coord,A,E) : 
 
+
+def vertGenerator(coord,A,E) : 
     verts = []
     B = 63.1
     Bp = 49.5
     d = 640
     dp = 480
-    
+
     for step in range(coord.shape[0]) :
-                
         for H in range(coord.shape[1]) :
-        
+            
             if(coord[step,H]!="" and coord[step,H]!="0.0"):
                 X=0
                 Y=0
 
-
-               
                 x = float(coord[step,H])
                 D = 180-(180-B)/2-(B*x)/d
                 Dp = 180-(180-Bp)/2-(Bp*H)/dp
 
                 t = (-3*E)/(1+math.tan(math.radians(D))*math.tan(math.radians(A)))
 
-                
                 X = (t+3*E)/(math.tan(math.radians(D)))
-
-
+                
                 J = (360/coord.shape[0])*step
                 R = (abs(X))/math.sin(math.radians(A))
                 C = (180-J) /2
@@ -107,9 +102,8 @@ def vertGenerator(coord,A,E) :
                 K = 2*R * math.cos( math.radians(C) )
                 G = 180-C-90+A
 
-                
-                X = X#+ K*math.cos(math.radians(G))
-                Y = t# + K*math.sin(math.radians(G))
+                X = X + K*math.cos(math.radians(G)) # La 2ème partie rajoute la rotation
+                Y = t + K*math.sin(math.radians(G))
                 Z = (t+3*E)/math.tan(math.radians(Dp))
                 
                 verts.append( ( X*0.1 , Y*0.1, -Z*0.1))
@@ -120,7 +114,7 @@ def vertGenerator(coord,A,E) :
 if __name__ == "__main__":
     
     title,coord,angle,distance,nom = decrypt(fichierProvisoire.link().lien)
-    
+
     verts = vertGenerator(coord,angle,distance)
 
     run((0,0,0),verts,nom)
