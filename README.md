@@ -1,6 +1,6 @@
 # 3D-Scanner-Using-Laser-Triangulation
 
-This 3D Scanner by Laser Triangulation was built by TAJAN Baptiste, CHAUCHAT Eymeric and CAPGRAS Paul.
+This 3D Scanner using Laser Triangulation was built by TAJAN Baptiste, CHAUCHAT Eymeric and CAPGRAS Paul.
 
 It was part of a school project.
 
@@ -16,7 +16,7 @@ Laser Triangulation is the name of the technology we used. The idea is very simp
 
 ![alt text](SAVES/images/no_deformation.png)
 
-If we observe right behing the laser we can't see anything. But if we move our point of view (= camera / webcam) than we are abble to whatch this deformation
+If we observe right behing the laser we can't see anything. But if we move our point of view (= camera / webcam) than we are abble to whatch this deformation.
 
 ![alt text](SAVES/images/deformation.png)
 
@@ -39,8 +39,8 @@ The software presented here is to do and control all that. Without the scanner y
 ![alt text](SAVES/images/tasse.png)
 
 Note:
-- On some pictures you can see the bracket. At the end we implement a functionality to remove it by doing a capture before putting the object.
-- As you can see we get a mesh of points wich it is not stritly speaking a virtual object. Yet you get a good idea about it.
+- On some pictures you can see the bracket. At the end we implement a functionality to remove it by doing a capture before putting the object
+- As you can see we get a mesh of points wich it is not stritly speaking a virtual object. Yet you get a good idea about it
 
 # Setup
 
