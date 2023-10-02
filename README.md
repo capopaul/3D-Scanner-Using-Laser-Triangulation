@@ -16,7 +16,7 @@ Laser Triangulation is the name of the technology we used. The idea is very simp
 
 ![alt text](SAVES/images/no_deformation.png)
 
-If we observe right behing the laser we can't see anything. But if we move our point of view (= camera / webcam) than we are abble to whatch this deformation.
+If we observe right behing the laser we can't see anything. But if we move our point of view (= camera / webcam) than we are abble to watch this deformation.
 
 ![alt text](SAVES/images/deformation.png)
 
@@ -55,7 +55,7 @@ pip install --no-cache-dir --upgrade -r requirements.txt
 
 ### To visualize Scan Examples
 - Install Blender
-- Run Main.py, in the 
+- Run Main.py
 - Configure your path to blender in the bottom right windows called "Lien vers blender".
 - Open a scan result (Fichier -> Ouvrir... -> .ScanTest/lampeHuile.txt)
 - Visualize the result (Visualisation -> Visualiser)
